@@ -77,6 +77,10 @@ public class App {
                     System.out.println("Amen wtf, ge mig pengar!!!!");
                 }
             }
+            else if (val == 4) {
+                
+                
+            }
         }
         scanner.close();
     }
