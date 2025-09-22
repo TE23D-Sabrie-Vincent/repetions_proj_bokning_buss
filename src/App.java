@@ -3,6 +3,20 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 
 public class App {
+    static void Bokstaver() {
+
+        Scanner scanner = new Scanner(System.in);
+        try {
+            int val = 0;
+
+            val = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println(" Du måste skriva ett nummer");
+            scanner.nextLine();
+        }
+        scanner.close();
+    }
+
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
@@ -35,6 +49,7 @@ public class App {
             if (val == 1) {
                 System.out.println("Vilken plats vill du boka? (1-20)");
                 int plats = scanner.nextInt() - 1; // -1 så att det går från 1-20 istället för 0-19
+
                 if (plats < 0 || plats >= bokningar.length) {
                     System.out.println("Ogiltigt platsnummer!");
                 }
@@ -66,20 +81,17 @@ public class App {
                 for (int i = 0; i < bokningar.length; i++) {
                     if (bokningar[i] != 0) {
                         sålda++;
-
                     }
 
                 }
                 double vinst = sålda * 299.90;
                 System.out.println("Sålda biljetter: " + sålda);
-                System.out.println("All min cash >:D : " + vinst + " kr");
-                if (vinst == 0) {
+                if (vinst > 0) {
+                    System.out.println("All min cash >:D : " + vinst + " kr");
+
+                } else if (vinst == 0) {
                     System.out.println("Amen wtf, ge mig pengar!!!!");
                 }
-            }
-            else if (val == 4) {
-                
-                
             }
         }
         scanner.close();
