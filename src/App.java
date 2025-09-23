@@ -3,19 +3,20 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 
 public class App {
-    static void Bokstaver() {
+    // static public Bokstaver() {
 
-        Scanner scanner = new Scanner(System.in);
-        try {
-            int val = 0;
+    // Scanner scanner = new Scanner(System.in);
+    // try {
+    // int val = 0;
 
-            val = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println(" Du måste skriva ett nummer");
-            scanner.nextLine();
-        }
-        scanner.close();
-    }
+    // val = scanner.nextInt();
+    // } catch (InputMismatchException e) {
+    // System.out.println(" Du måste skriva ett nummer");
+    // scanner.nextLine();
+    // }
+    // scanner.close();
+    // return;
+    // }
 
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
@@ -48,10 +49,19 @@ public class App {
 
             if (val == 1) {
                 System.out.println("Vilken plats vill du boka? (1-20)");
+
+                try {
+                    val = scanner.nextInt();
+                } catch (InputMismatchException e) {
+                    System.out.println(" Du måste skriva ett nummer");
+                    continue;
+                }
+
                 int plats = scanner.nextInt() - 1; // -1 så att det går från 1-20 istället för 0-19
 
                 if (plats < 0 || plats >= bokningar.length) {
                     System.out.println("Ogiltigt platsnummer!");
+
                 }
 
                 else if (bokningar[plats] != 0) {
@@ -62,7 +72,8 @@ public class App {
                     System.out.print("Ange födelsedatum: ");
                     int datum = scanner.nextInt();
                     bokningar[plats] = datum;
-                    System.out.println("Plats " + plats + " bokad!");
+                    System.out.println("Platsen är bokad!");
+                    continue;
                 }
             }
 
