@@ -1,29 +1,12 @@
 import java.util.Scanner;
 import java.util.Arrays;
-// import java.util.InputMismatchException;
 
 public class App {
-    // static public Bokstaver() {
-
-    // Scanner scanner = new Scanner(System.in);
-    // try {
-    // int val = 0;
-
-    // val = scanner.nextInt();
-    // } catch (InputMismatchException e) {
-    // System.out.println(" Du måste skriva ett nummer");
-    // scanner.nextLine();
-    // }
-    // scanner.close();
-    // return;
-    // }
-
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
         int bokningar[] = new int[20];
         boolean loop = true;
-        // int val = 0;
 
         while (loop) {
             System.out.println("\nMeny:");
@@ -78,7 +61,7 @@ public class App {
                         datum = scanner.nextInt();
                     }
                     catch (Exception e){
-                        System.out.println("Använd nummer till datumet!");
+                        System.out.println("Använd nummer till datumet! eller så gick något annat fel");
                         scanner.nextLine();
                         continue;
                     }
